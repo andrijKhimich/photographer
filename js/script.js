@@ -63,16 +63,19 @@ $(window).on('load', function () {
     contactsShowText();
     setTimeout(contactsShowSidebar, 1500);
   }
+
   function pageRedirectPort() {
     window.location.replace("index.html#portfolio");
   }
+
   function pageRedirectAbout() {
     window.location.replace("index.html#about");
   }
+
   function pageRedirectContacts() {
     window.location.replace("index.html#contacts");
   }
-// Перевірка розміру екрану мобільна версія < 1024 ====================================================
+  // Перевірка розміру екрану мобільна версія < 1024 ====================================================
   if (windowWith.matches) {
     if (window.location.href == 'http://lxocalhost:3000/index.html#portfolio') {
       history.pushState('', document.title, window.location.pathname);
@@ -83,8 +86,7 @@ $(window).on('load', function () {
         $('.portfolio').delay(500).fadeIn(1000);
         setTimeout(portfolioShow, 1500);
       }, 1000);
-    }
-    else if (window.location.href == 'http://localhost:3000/index.html#about'){
+    } else if (window.location.href == 'http://localhost:3000/index.html#about') {
       $('.header').fadeOut(1000);
       // $('.portfolio').fadeOut(1000);
       headerHide();
@@ -92,8 +94,7 @@ $(window).on('load', function () {
         $('.about').delay(500).fadeIn(1000);
         setTimeout(aboutShow, 1500);
       }, 1000);
-    }
-    else if (window.location.href == 'http://localhost:3000/index.html#contacts'){
+    } else if (window.location.href == 'http://localhost:3000/index.html#contacts') {
       $('.header').fadeOut(1000);
       // $('.portfolio').fadeOut(1000);
       headerHide();
@@ -145,18 +146,18 @@ $(window).on('load', function () {
 });
 $(document).ready(function () {
   $('.photosession__img_wrap').magnificPopup({
-    type : 'image',
+    type: 'image',
     closeOnContentClick: false,
-    gallery : {
-      enabled : true
+    gallery: {
+      enabled: true
     },
     zoom: {
-			enabled: true,
-			duration: 300,
-			opener: function(element) {
-				return element.find('img');
-			}
-		}
+      enabled: true,
+      duration: 300,
+      opener: function (element) {
+        return element.find('img');
+      }
+    }
   });
   $('.portfolio').hide();
   $('.about').hide();
@@ -493,12 +494,14 @@ $(document).ready(function () {
       sidebarHide();
       hideScrollEffect();
     });
+
     function contactsHide() {
       $('.contacts__logo').addClass('contacts__logo_hide');
       $('.contacts__btn').addClass('contacts__btn_hide');
       setTimeout(contactsStatic, 3000);
       setTimeout(headerShow, 3000);
     }
+
     function contactsStatic() {
       $('.contacts__img_wrap').addClass('contacts__img_wrap_active');
       $('.contacts__text_wrap').addClass('contacts__text_wrap_active');
@@ -851,7 +854,17 @@ $(document).ready(function () {
     });
 
     $('.portfolio_main').hide();
-    // $('.portfolio__content, .portfolio__item, .portfolio__content_item, .photosession__content_wrap').scroll(function () {
+    $('.portfolio__content, .portfolio__item, .portfolio__content_item, .photosession__content_wrap').scroll(function () {
+      let scrollHeight = $(this).height();
+      let position = $(this).scrollTop();
+      if (position >= scrollHeight) {
+        setTimeout(linneBottom, 500);
+        $('.portfolio_main').fadeIn();
+      } else {
+        $('.portfolio_main').hide();
+      }
+    });
+    // $('.portfolio__content').scroll(function () {
     //   let scrollHeight = $(this).height();
     //   let position = $(this).scrollTop();
     //   if (position >= scrollHeight) {
@@ -861,46 +874,36 @@ $(document).ready(function () {
     //     $('.portfolio_main').hide();
     //   }
     // });
-    $('.portfolio__content').scroll(function () {
-      let scrollHeight = $(this).height();
-      let position = $(this).scrollTop();
-      if (position >= scrollHeight) {
-        setTimeout(linneBottom, 500);
-        $('.portfolio_main').fadeIn();
-      } else {
-        $('.portfolio_main').hide();
-      }
-    });
-    $('.portfolio__item').scroll(function () {
-      let scrollHeight = $(this).height();
-      let position = $(this).scrollTop();
-      if (position >= scrollHeight) {
-        setTimeout(linneBottom, 500);
-        $('.portfolio_main').fadeIn();
-      } else {
-        $('.portfolio_main').hide();
-      }
-    });
-    $('.portfolio__content_item').scroll(function () {
-      let scrollHeight = $(this).height();
-      let position = $(this).scrollTop();
-      if (position >= scrollHeight) {
-        setTimeout(linneBottom, 500);
-        $('.portfolio_main').fadeIn();
-      } else {
-        $('.portfolio_main').hide();
-      }
-    });
-    $('.photosession__content_item').scroll(function () {
-      let scrollHeight = $(this).height();
-      let position = $(this).scrollTop();
-      if (position >= scrollHeight) {
-        setTimeout(linneBottom, 500);
-        $('.portfolio_main').fadeIn();
-      } else {
-        $('.portfolio_main').hide();
-      }
-    });
+    // $('.portfolio__item').scroll(function () {
+    //   let scrollHeight = $(this).height();
+    //   let position = $(this).scrollTop();
+    //   if (position >= scrollHeight) {
+    //     setTimeout(linneBottom, 500);
+    //     $('.portfolio_main').fadeIn();
+    //   } else {
+    //     $('.portfolio_main').hide();
+    //   }
+    // });
+    // $('.portfolio__content_item').scroll(function () {
+    //   let scrollHeight = $(this).height();
+    //   let position = $(this).scrollTop();
+    //   if (position >= scrollHeight) {
+    //     setTimeout(linneBottom, 500);
+    //     $('.portfolio_main').fadeIn();
+    //   } else {
+    //     $('.portfolio_main').hide();
+    //   }
+    // });
+    // $('.photosession__content_item').scroll(function () {
+    //   let scrollHeight = $(this).height();
+    //   let position = $(this).scrollTop();
+    //   if (position >= scrollHeight) {
+    //     setTimeout(linneBottom, 500);
+    //     $('.portfolio_main').fadeIn();
+    //   } else {
+    //     $('.portfolio_main').hide();
+    //   }
+    // });
 
     function linneBottom() {
       $('.portfolio__content, .portfolio__item, .portfolio__content_item, .photosession__content_item').addClass('bottom_active');
