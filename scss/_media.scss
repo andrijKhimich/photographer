@@ -92,6 +92,12 @@
     padding-left: 5%;
     padding-right: 0;
   }
+  .portfolio_main {
+    bottom: 9.5%;
+  }
+  .photosession__item .portfolio_main {
+    bottom: 7%;
+  }
 
   .about__content {
     margin-top: 140px;
@@ -290,11 +296,11 @@
   .portfolio__btn_rev {
     font-size: 14px;
   }
-  .photosession__item .portfolio_main {
-    bottom: 10%;
-  }
+  // .photosession__item .portfolio_main {
+  //   bottom: 10%;
+  // }
   .portfolio_main {
-    bottom: 11%;
+    bottom: 9%;
   }
 
   .about__text {
@@ -509,7 +515,13 @@
   .portfolio__content_item::-webkit-scrollbar {
     width: 4px;
   }
-
+  .portfolio_main {
+    bottom: 8%;
+    font-size: 12px;
+  }
+  .photosession__item .portfolio_main {
+    bottom: 5%;
+  }
   .about__content {
     margin-top: 110px;
   }
