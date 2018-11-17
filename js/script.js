@@ -854,59 +854,46 @@ $(document).ready(function () {
     });
 
     $('.portfolio_main').hide();
-    $('.portfolio__content, .portfolio__item, .portfolio__content_item, .photosession__content_wrap').scroll(function () {
+    $('.portfolio__content').scroll(function () {
       let scrollHeight = $(this).height();
       let position = $(this).scrollTop();
+      console.log(position);
+      console.log(scrollHeight);
       if (position >= scrollHeight) {
         setTimeout(linneBottom, 500);
-        $('.portfolio_main').fadeIn();
+        $('.portfolio_main').fadeIn(200);
       } else {
         $('.portfolio_main').hide();
       }
     });
-    // $('.portfolio__content').scroll(function () {
-    //   let scrollHeight = $(this).height();
-    //   let position = $(this).scrollTop();
-    //   if (position >= scrollHeight) {
-    //     setTimeout(linneBottom, 500);
-    //     $('.portfolio_main').fadeIn();
-    //   } else {
-    //     $('.portfolio_main').hide();
-    //   }
-    // });
-    // $('.portfolio__item').scroll(function () {
-    //   let scrollHeight = $(this).height();
-    //   let position = $(this).scrollTop();
-    //   if (position >= scrollHeight) {
-    //     setTimeout(linneBottom, 500);
-    //     $('.portfolio_main').fadeIn();
-    //   } else {
-    //     $('.portfolio_main').hide();
-    //   }
-    // });
-    // $('.portfolio__content_item').scroll(function () {
-    //   let scrollHeight = $(this).height();
-    //   let position = $(this).scrollTop();
-    //   if (position >= scrollHeight) {
-    //     setTimeout(linneBottom, 500);
-    //     $('.portfolio_main').fadeIn();
-    //   } else {
-    //     $('.portfolio_main').hide();
-    //   }
-    // });
-    // $('.photosession__content_item').scroll(function () {
-    //   let scrollHeight = $(this).height();
-    //   let position = $(this).scrollTop();
-    //   if (position >= scrollHeight) {
-    //     setTimeout(linneBottom, 500);
-    //     $('.portfolio_main').fadeIn();
-    //   } else {
-    //     $('.portfolio_main').hide();
-    //   }
-    // });
+    // $('.portfolio_main').hide();
+    $('.portfolio__content_item').scroll(function () {
+      let scrollHeight = $(this).height();
+      let position = $(this).scrollTop();
+      if (position >= scrollHeight) {
+        setTimeout(linneBottom, 500);
+        $('.portfolio_main').fadeIn(200);
+      } else {
+        $('.portfolio_main').hide();
+      }
+    });
+    // $('.portfolio_main').hide();
+    $('.photosession__content_wrap').scroll(function () {
+      let height = $(this).height();
+      let scrollHeight = $('.photosession__content_item').height();
+      let position = $(this).scrollTop() + height;
+      console.log(position);
+      console.log(scrollHeight);
+      if (position >= scrollHeight) {
+        setTimeout(linneBottom, 500);
+        $('.portfolio_main').fadeIn(200);
+      } else {
+        $('.portfolio_main').hide();
+      }
+    });
 
     function linneBottom() {
-      $('.portfolio__content, .portfolio__item, .portfolio__content_item, .photosession__content_item').addClass('bottom_active');
+      $('.portfolio__content, .portfolio__content_item, .photosession__content_wrap').addClass('bottom_active');
     }
   }
 });

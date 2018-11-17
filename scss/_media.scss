@@ -226,10 +226,6 @@
     top: 30px;
   }
 
-  // .main__menu {
-  //   padding-top: 30px;
-  // }
-
   .menu__link {
     font-size: 12px;
   }
@@ -238,9 +234,6 @@
     width: 20px;
   }
 
-  // .header__content {
-  //   margin-top: 90px;
-  // }
   .header__img_wrap {
     left: -40px;
 
@@ -296,6 +289,12 @@
   .portfolio__btn,
   .portfolio__btn_rev {
     font-size: 14px;
+  }
+  .photosession__item .portfolio_main {
+    bottom: 10%;
+  }
+  .portfolio_main {
+    bottom: 11%;
   }
 
   .about__text {
@@ -1148,6 +1147,7 @@
     overflow: auto;
     padding: 0 40px;
     box-sizing: border-box;
+    overflow: hidden;
   }
 }
 

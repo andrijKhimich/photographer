@@ -866,6 +866,7 @@ ul {
     background-color: $textColor;
     position: absolute;
     left: 0;
+    
     width: 0;
     transition: width 1s;
   }
@@ -983,6 +984,9 @@ ul {
 }
 .portfolio__content::-webkit-scrollbar-thumb {
  background-color: #000000;
+}
+.photosession__item .portfolio_main {
+  bottom: 6%;
 }
 .portfolio_main {
   display: block;
@@ -1542,14 +1546,6 @@ ul {
     box-shadow: 0 0 0 2000px $mainColor;
   }
 }
-// @keyframes contactExit {
-//   50% {
-//     box-shadow: 0 0 0 0 $mainColor;
-//   }
-//   100% {
-//     box-shadow: 0 0 0 2000px $mainColor;
-//   }
-// }
 @keyframes contactExitLg {
   50% {
     box-shadow: 0 0 0 0 #fff;
@@ -1559,11 +1555,6 @@ ul {
     z-index: 10;
   }
 }
-// portfolio item
-// .portfolio__content_item {
-//   display: flex;
-//   flex-direction: column;
-// }
 .portfolio__item {
   display: block;
 }
@@ -1628,6 +1619,9 @@ ul {
 }
 .photosession__content_wrap {
   height: 75%;
+  // display: flex;
+  // flex-wrap: wrap;
+  // justify-content: space-between;
 }
 .photosession__head {
   font-weight: normal;
@@ -1642,6 +1636,17 @@ ul {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  position: relative;
+  // &:after {
+  //   content: "";
+  //   display: block;
+  //   height: 2px;
+  //   background-color: $textColor;
+  //   position: absolute;
+  //   left: 0;
+  //   width: 0;
+  //   transition: width 1s;
+  // }
 }
 .photosession__img_wrap {
   margin-bottom: 40px;

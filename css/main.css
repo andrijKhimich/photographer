@@ -1819,6 +1819,10 @@ ul {
   background-color: #000000;
 }
 
+.photosession__item .portfolio_main {
+  bottom: 6%;
+}
+
 .portfolio_main {
   display: block;
   position: absolute;
@@ -2842,6 +2846,7 @@ ul {
   -webkit-justify-content: space-between;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  position: relative;
 }
 
 .photosession__img_wrap {
@@ -3092,6 +3097,12 @@ ul {
   .portfolio__btn,
   .portfolio__btn_rev {
     font-size: 14px;
+  }
+  .photosession__item .portfolio_main {
+    bottom: 10%;
+  }
+  .portfolio_main {
+    bottom: 11%;
   }
   .about__text {
     font-size: 16px;
@@ -3935,6 +3946,7 @@ ul {
     padding: 0 40px;
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
+    overflow: hidden;
   }
 }
 
