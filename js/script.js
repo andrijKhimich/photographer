@@ -1,5 +1,40 @@
 var windowWith = window.matchMedia('all and (max-width: 1023px)');
 $(window).on('load', function () {
+  if (window.location.href == 'http://localhost:3000/index.html') {
+    $('.loader_inner').css('display' , 'block');
+  }
+  if (window.location.href == 'http://localhost:3000/weddingPage.html') {
+    $('.loader_inner').css('display' , 'none');
+    $('.loader').delay(1000).fadeOut(1000);
+  }
+  if (window.location.href == 'http://localhost:3000/weddingPhotosession.html') {
+    $('.loader_inner').css('display' , 'none');
+    $('.loader').delay(1000).fadeOut(1000);
+  }
+  if (window.location.href == 'http://localhost:3000/lovePage.html') {
+    $('.loader_inner').css('display' , 'none');
+    $('.loader').delay(1000).fadeOut(1000);
+  }
+  if (window.location.href == 'http://localhost:3000/lovePhotosession.html') {
+    $('.loader_inner').css('display' , 'none');
+    $('.loader').delay(1000).fadeOut(1000);
+  }
+  if (window.location.href == 'http://localhost:3000/familyPage.html') {
+    $('.loader_inner').css('display' , 'none');
+    $('.loader').delay(1000).fadeOut(1000);
+  }
+  if (window.location.href == 'http://localhost:3000/familyPhotosession.html') {
+    $('.loader_inner').css('display' , 'none');
+    $('.loader').delay(1000).fadeOut(1000);
+  }
+  if (window.location.href == 'http://localhost:3000/portraitPage.html') {
+    $('.loader_inner').css('display' , 'none');
+    $('.loader').delay(1000).fadeOut(1000);
+  }
+  if (window.location.href == 'http://localhost:3000/portraitPhotosession.html') {
+    $('.loader_inner').css('display' , 'none');
+    $('.loader').delay(1000).fadeOut(1000);
+  }
   $('.loader_inner').delay(1000).fadeOut(1000);
   $('.loader').delay(1500).fadeOut(1000);
   setTimeout(portfolioItemBlockShow, 2000);
@@ -77,7 +112,7 @@ $(window).on('load', function () {
   }
   // Перевірка розміру екрану мобільна версія < 1024 ====================================================
   if (windowWith.matches) {
-    if (window.location.href == 'http://lxocalhost:3000/index.html#portfolio') {
+    if (window.location.href == 'http://localhost:3000/index.html#portfolio') {
       history.pushState('', document.title, window.location.pathname);
       pageRedirectPort();
       $('.header').fadeOut(1000);
